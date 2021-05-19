@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/book.ico') }}" type="image/x-icon">
+        <title>Book Tracker App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" type="text/css">
+        <script src="{{ url_for('static', filename='reload.js') }}"></script>
+    </head>
+    <body>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash-container">
+                    <p class="{{category}}">{{message}}</p>
+                </div>
+            {% endfor %}
+        {% endwith %}
+            
+        <main class="page-main">
+            <h1>Book Tracker App</h1>
+            <div class="form-container">
+                <form class="add-book-form" action="{{ url_for('core.index') }}" method="POST">
+                    {{ form.hidden_tag() }}
+                    {{ form.author.label(class='form-label') }}
+                    {{ form.author(class='form-input') }} 
+                    {{ form.title.label(class='form-label') }}
+                    {{ form.title(class='form-input') }} 
+                    {{ form.submit(class='form-submit-btn', onclick="reloadPage()") }} 
+                </form>
+            </div>
+            <div class="outer-books-container">
+                <div class="books-to-read-container">
+                    <h2>Reading List</h2>
+                    {% for book in to_read %}
+                        <div class="book-details-container to-read">
+                            <p class="book-author">{{ book.author }}</p>
+                            <p class="book-title">{{ book.title }}</p>
+                            <div class="book-btns-container">
+                                <form action="{{ url_for('core.complete', title=book.title) }}" method="post" onclick="reloadPage()">
+                                    <input class="mark-complete-btn" type="submit" value="Mark Complete">
+                                </form>
+                                <form action="{{ url_for('core.delete', title=book.title, column='to_read') }}" method="post" onclick="reloadPage()">
+                                    <input class="delete-btn" type="submit" value="Delete">
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="finished-books-container">
+                    <h2>Finished Books</h2>
+                    {% for book in finished_books %}
+                        <div class="book-details-container finished">
+                            <p class="book-author">{{ book.author }}</p>
+                            <p class="book-title">{{ book.title }}</p>
+                            <div class="book-btns-container">
+                                <form action="{{ url_for('core.delete', title=book.title, column='finished') }}" method="post" onclick="reloadPage()">
+                                    <input class="delete-btn" type="submit" value="Delete">
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>   
+        </main>
+        <script src="{{ url_for('static', filename='main.js') }}"></script>
+    </body>
+</html>
