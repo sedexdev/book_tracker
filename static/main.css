@@ -1,0 +1,140 @@
+/* Core Styles */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Flashed Messages */
+.flash-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(4, 214, 4);
+    margin: 0;
+}
+.message {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+/* Buttons */
+.form-submit-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: orangered;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+.form-submit-btn:hover {
+    background-color: darkred;
+}
+.mark-complete-btn,
+.delete-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 0;
+    cursor: pointer;
+}
+.mark-complete-btn {
+    margin-right: 10px;
+}
+.mark-complete-btn:hover,
+.delete-btn:hover {
+    color: darkred;
+}
+
+/* Core Page Styles */
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 50px 0;
+}
+.page-main {
+    padding: 50px;
+}
+.form-container {
+    width: 60%;
+    margin: 20px auto;
+}
+.add-book-form {
+    display: flex;
+    flex-direction: column;
+}
+.form-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 5px 0;
+}
+.form-input {
+    margin: 20px 0;
+    padding-left: 5px;
+}
+.outer-books-container {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 50px auto;
+}
+.books-to-read-container {
+    width: 45%;
+}
+.book-details-container {
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px 10px 10px 30px;
+    margin: 10px 0;
+}
+.to-read {
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+}
+.finished {
+    background-color: greenyellow;
+}
+.book-author {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.book-title {
+    font-size: 1.1rem;
+}
+.book-btns-container {
+    display: flex;
+}
+.finished-books-container {
+    width: 45%;
+}
+
+@media (max-width: 1100px) {
+    .form-container {
+        width: 80%;
+    }
+    .outer-books-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-main {
+        padding: 20px;
+    }
+    .form-container {
+        width: 100%;
+    }
+    .outer-books-container {
+        flex-direction: column;
+        width: 100%;
+    }
+    .books-to-read-container,
+    .finished-books-container {
+        width: 100%;
+    }
+}
