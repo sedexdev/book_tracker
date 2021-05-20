@@ -9,7 +9,7 @@ body {
 /* Flashed Messages */
 .flash-container {
     position: fixed;
-    top: 0;
+    bottom: 0;
     width: 100%;
     background-color: rgb(4, 214, 4);
     margin: 0;
@@ -57,10 +57,18 @@ body {
 h1 {
     text-align: center;
     font-size: 3rem;
-    margin: 50px 0;
+    margin: 50px 0 20px 0;
+}
+h3 {
+    display: block;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 50px;
 }
 .page-main {
     background-color: rgb(241, 255, 176);
+    background-repeat: repeat-y;
+    height: 100vh;
     padding: 50px;
 }
 .form-container {
@@ -79,6 +87,15 @@ h1 {
     height: 40px;
     margin: 20px 0;
     padding-left: 5px;
+}
+.finished-total {
+    text-align: center;
+    font-size: 1.2rem;
+}
+.finished-count {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: red;
 }
 .outer-books-container {
     display: flex;

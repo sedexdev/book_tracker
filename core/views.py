@@ -16,10 +16,13 @@ core_blueprint = Blueprint(
 
 
 def get_args():
+    finished_books = FinishedBooks.get_all()
+    finished_count = len(finished_books)
     return {
         'form': BookForm(),
         'to_read': BooksToRead.get_all(),
-        'finished_books': FinishedBooks.get_all()
+        'finished_books': finished_books,
+        'finished_count': finished_count
     }
 
 

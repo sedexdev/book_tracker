@@ -21,6 +21,7 @@
             
         <main class="page-main">
             <h1>Book Tracker App</h1>
+            <h3>Start Date: 20/05/2021</h3>
             <div class="form-container">
                 <form class="add-book-form" action="{{ url_for('core.index') }}" method="POST">
                     {{ form.hidden_tag() }}
@@ -30,6 +31,7 @@
                     {{ form.title(class='form-input') }} 
                     {{ form.submit(class='form-submit-btn', onclick="reloadPage()") }} 
                 </form>
+                <p class="finished-total">Total finished books: <span class="finished-count">{{ finished_count }}</span></p>
             </div>
             <div class="outer-books-container">
                 <div class="books-to-read-container">
