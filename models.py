@@ -7,7 +7,7 @@ class BooksToRead(db.Model):
     __tablename__ = 'books_to_read'
 
     id = db.Column(db.Integer, primary_key=True)
-    author = db.Column(db.String(255), unique=True, nullable=False)
+    author = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(255), unique=True, nullable=False)
     created = db.Column(db.DateTime, default=datetime.utcnow())
 
