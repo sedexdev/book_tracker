@@ -12,12 +12,12 @@ counter to show you how many books you have read.
  - Create a local SQL database instance (I am using PostgreSQL)
  - Create a <code>.env</code> file
 
-Your <code>.env</code> file should contain the following variables:
+Your <code>.env</code> file should contain the following:
 
-export FLASK_APP="app.py"
-export APP_SETTINGS="config.DevelopmentConfig"
-export DATABASE_URL="your_database_uri"
-export SECRET_KEY="some_secret_key"
+export FLASK_APP="app.py"<br />
+export APP_SETTINGS="config.DevelopmentConfig"<br />
+export DATABASE_URL="your_database_uri"<br />
+export SECRET_KEY="some_secret_key"<br />
 
 Once that's done, in the <code>app</code> directory run:
 
