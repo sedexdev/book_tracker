@@ -21,7 +21,7 @@ Your <code>.env</code> file should contain the following:
 
 Once that's done, in the <code>app</code> directory run:
 
- - <code>python app.py</code>
+<code>python app.py</code>
 
 I have not chosen to put this app online, but the basic config is there in <code>config.py</code>
 should you wish to add user login/logout and user account functionality to the app and stick it 
